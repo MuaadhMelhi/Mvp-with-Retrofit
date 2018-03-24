@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,9 @@ import nyc.muaadh_melhi_develpoer.mvp_example_android.model.CountryRes;
  */
 
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.CountryViewHolder> {
+    int count = 0;
     List<CountryRes> countryResList = new ArrayList<>();
+    private int nullCount = 0;
 
     public CountryAdapter(List<CountryRes> countryResList) {
         this.countryResList.clear();
@@ -39,6 +43,8 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.CountryV
     @Override
     public void onBindViewHolder(final CountryViewHolder holder, int position) {
         holder.tvCountryName.setText(countryResList.get(position).getName());
+         String url=countryResList.get(0).getFlag();
+        Picasso.get().load(url).into(holder.imCountryFlag);
         holder.tvCountryName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
