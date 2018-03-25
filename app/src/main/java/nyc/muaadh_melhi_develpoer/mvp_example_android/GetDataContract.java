@@ -11,7 +11,6 @@ import nyc.muaadh_melhi_develpoer.mvp_example_android.model.CountryRes;
 public interface GetDataContract {
     interface View {
         void getDataSuccess(List<CountryRes> countriesData);
-
         void getDataFailure(String message);
     }
 

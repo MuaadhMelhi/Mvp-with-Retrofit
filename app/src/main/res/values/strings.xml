@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MVP with Retrofit</string>
+    <string name="base_url">https://restcountries.eu/rest/v2/</string>
 </resources>
